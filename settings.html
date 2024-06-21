@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Admin Dashboard - Settings</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+        #sidebar {
+            min-width: 250px;
+            max-width: 250px;
+            background: #343a40;
+            color: #fff;
+        }
+        #sidebar .nav-link {
+            color: #fff;
+        }
+        #content {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="d-flex" id="wrapper">
+        <!-- Sidebar -->
+        <div id="sidebar" class="bg-dark">
+            <div class="sidebar-heading text-center py-4">Admin Dashboard</div>
+            <div class="list-group list-group-flush">
+                <a href="index.html" class="list-group-item list-group-item-action bg-dark text-white">Dashboard</a>
+                <a href="users.html" class="list-group-item list-group-item-action bg-dark text-white">Users</a>
+                <a href="orders.html" class="list-group-item list-group-item-action bg-dark text-white">Orders</a>
+                <!--<a href="sales.html" class="list-group-item list-group-item-action bg-dark text-white">Sales</a>-->
+                <a href="analytics.html" class="list-group-item list-group-item-action bg-dark text-white">Analytics</a>
+                <a href="settings.html" class="list-group-item list-group-item-action bg-dark text-white">Settings</a>
+                <a href="#" class="list-group-item list-group-item-action bg-dark text-white">Logout</a>
+            </div>
+        </div>
+
+        <!-- Page Content -->
+        <div id="content" class="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+                <button class="btn btn-primary" id="menu-toggle">Toggle Menu</button>
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="container mt-4">
+                <h1 class="mt-4">Settings</h1>
+                
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card mb-4">
+                            <div class="card-header">General Settings</div>
+                            <div class="card-body">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="siteName">Site Name</label>
+                                        <input type="text" class="form-control" id="siteName" placeholder="Enter site name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="timezone">Timezone</label>
+                                        <select class="form-control" id="timezone">
+                                            <option value="gmt">GMT</option>
+                                            <option value="est">EST</option>
+                                            <option value="pst">PST</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="currency">Currency</label>
+                                        <select class="form-control" id="currency">
+                                            <option value="zar">ZAR (South African Rand)</option>
+                                            <option value="usd">USD (United States Dollar)</option>
+                                            <option value="eur">EUR (Euro)</option>
+                                        </select>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="card mb-4">
+                            <div class="card-header">Email Settings</div>
+                            <div class="card-body">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="emailHost">Email Host</label>
+                                        <input type="text" class="form-control" id="emailHost" placeholder="Enter email host">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="emailPort">Email Port</label>
+                                        <input type="number" class="form-control" id="emailPort" placeholder="Enter email port">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+    </script>
+</body>
+</html>
